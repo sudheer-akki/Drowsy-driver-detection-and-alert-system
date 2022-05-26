@@ -13,5 +13,5 @@ pip install -r requirements.txt
 ````
 3. Run 
 ````bash
-python detect_drowsiness.py -p shape_detector.dat
+python detect_drowsiness.py
 ````
