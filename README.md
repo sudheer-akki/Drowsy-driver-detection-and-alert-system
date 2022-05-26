@@ -1,7 +1,7 @@
 ## Drowsy_driver_detection_and_alert_system
 
 
-### Installtion
+### Installation
 1. Create conda environment
 ```bash
 conda create -env name python==3.5
