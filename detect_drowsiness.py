@@ -5,6 +5,7 @@ Created on Sun Aug 23 20:45:27 2020
 @author: Akki
 """
 
+import argparse
 import numpy as np
 import imutils
 import scipy
@@ -20,13 +21,6 @@ from flask import Flask, render_template, Response
 import cv2
 
 app = Flask(__name__)
-
-
-import argparse
-
-
-
-  
   
 
 @app.route('/')
@@ -36,7 +30,6 @@ def index():
 @app.route('/video')
 def video():
   return Response(generate_frame(),mimetype='multipart/x-mixed-replace; boundary=frame')
-
 
 
 def sound_alarm(path):
@@ -56,9 +49,9 @@ def eye_aspect_ratio(eye):
 
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
-ap.add_argument("-p", "--shape-predictor", default="shape_predictor.dat",
+ap.add_argument("-p", "--shape-predictor", default="assets/shape_predictor.dat",
 	help="path to facial landmark predictor")
-ap.add_argument("-a", "--alarm", type=str, default="alarm.mp3",
+ap.add_argument("-a", "--alarm", type=str, default="assets/alarm.mp3",
 	help="path alarm.mp3 file")
 ap.add_argument("-w", "--webcam", type=int, default=0,
 	help="index of webcam on system")
@@ -139,8 +132,6 @@ def generate_frame():
       yield(b'--frame\r\n'b'Content-Type:image/jpeg\r\n\r\n' + frame + b'\r\n')
 # start the video stream thread
 #print("[INFO] starting video stream thread...")
-
-    
             
         # cv2.imshow("frame",frame)
         # if cv2.waitKey(1) & 0xFF == ord('q'):

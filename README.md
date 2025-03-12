@@ -1,17 +1,28 @@
-## Drowsy_driver_detection_and_alert_system
-
+## Drowsy driver detection and alert system
 
 ### Installation
 1. Create conda environment
-```bash
-conda create -env name python==3.5
-conda activate name
+
+```sh
+conda create --name drowsiness_env python=3.5
+conda activate drowsiness_env
 ```
+
 2. Install dependencies
-````bash
+
+```sh
 pip install -r requirements.txt
-````
-3. Run 
-````bash
-python detect_drowsiness.py
-````
+```
+
+(or)
+
+3. Run using Docker
+```sh
+docker-compose up
+```
+
+**Note:** To rebuild the container
+
+```sh
+docker-compose up --build
+```

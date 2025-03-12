@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  drowsiness-detector:
+    build: .
+    container_name: drowsiness-detector
+    volumes:
+      - ./app:/workspace/app
+    working_dir: /workspace/app
+    command: ["python", "detect_drowsiness.py"]
+    restart: unless-stopped 
