@@ -14,9 +14,15 @@ conda activate drowsiness_env
 pip install -r requirements.txt
 ```
 
+3. Run the demo
+```sh
+python detect_drowsiness.py
+```
+
 (or)
 
-3. Run using Docker
+4. Run using Docker
+
 ```sh
 docker-compose up
 ```
